@@ -12,13 +12,34 @@ class Transactions extends Component {
   render() {
     const { transactions } = this.props;
     return <React.Fragment>
-        <h1 className="display-4 mb-2">
-          <span className="text-Primary">Transaction</span> List
+      <h1 className="display-4 mb-2">
+        <span className="text-Primary">Transaction</span> List
         </h1>
-        {transactions.map(t => (
-          <Transaction key={t.id} t={t} />
-        ))}
-      </React.Fragment>;
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {transactions.map(t => (
+          <tr key={t.id}> 
+              <td>{t.id}</td>
+              <td>{t.date}</td>
+              <td>{t.amount}</td>
+              <td>{t.description}</td>
+
+          </tr>
+           
+          ))}
+          
+        </tbody>
+      </table>
+
+    </React.Fragment>;
   }
 }
 const mapStateToProps = state => ({

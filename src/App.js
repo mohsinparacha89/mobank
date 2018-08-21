@@ -20,6 +20,7 @@ class App extends Component {
             <Header />
             <div className="container">
               <Account />
+              <hr/>
               <Switch>
                 <Route exact path="/transaction" component={Transcation} />
                 <Route exact path="/cards" component={BankCard} />

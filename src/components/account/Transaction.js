@@ -5,8 +5,8 @@ class Transaction extends Component {
       const { id, date, amount, description } = this.props.t;
 
     return (
-      <div className="card card-body mb-3">
-             {amount} {description}
+      <div >
+             {date} {amount} {description}
       </div>
     );
   }

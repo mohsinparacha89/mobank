@@ -4,9 +4,21 @@ const initialState = {
   transactions: [
     {
       id: "1",
-      date: new Date(),
+      date: "22/07/2018",
       amount: "1000",
       description: "cash withdrawl"
+    },
+    {
+      id: "2",
+      date: "15/07/2018",
+      amount: "587",
+      description: "cash withdrawl"
+    },
+    {
+      id: "3",
+      date: "08/07/2018",
+      amount: "674",
+      description: "Retail"
     }
   ]
 };
