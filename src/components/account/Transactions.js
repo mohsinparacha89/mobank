@@ -1,0 +1,31 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getTransactions } from "../../redux/actions/transactionActions";
+import Transaction from "./Transaction";
+
+class Transactions extends Component {
+  componentDidMount() {
+    this.props.getTransactions();
+  }
+
+  render() {
+    const { transactions } = this.props;
+    return <React.Fragment>
+        <h1 className="display-4 mb-2">
+          <span className="text-Primary">Transaction</span> List
+        </h1>
+        {transactions.map(t => (
+          <Transaction key={t.id} t={t} />
+        ))}
+      </React.Fragment>;
+  }
+}
+const mapStateToProps = state => ({
+  transactions: state.transaction.transactions
+});
+
+export default connect(
+  mapStateToProps,
+  { getTransactions }
+)(Transactions);
